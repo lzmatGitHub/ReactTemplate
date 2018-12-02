@@ -1,3 +1,14 @@
 jQuery(function(){
-    const h1 = <h1>Hello world</h1>;
+
+    const theExample = (
+        <a href="https://www.example.com">
+          <h1>
+            Click me!
+          </h1>
+        </a>
+      );
+
+      ReactDOM.render(theExample, jQuery("#app")[0]);
+      console.log(jQuery("#app"));
+      
 });
