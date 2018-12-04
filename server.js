@@ -6,10 +6,16 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 app.use(express.static('public'));
 
-//------------------------- html -----------------------------
+//------------------------- html ---------------------------
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/html/index.html');
+});
+
+//------------------------- css ----------------------------
+
+app.get('/css/style.css', function (req, res) {
+  res.sendFile(__dirname + '/css/style.css');
 });
 
 //------------------------- js -----------------------------
