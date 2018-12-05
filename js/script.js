@@ -1,6 +1,6 @@
 jQuery(function () {
 
-    const helloWorld = "Hello World !!!  "
+    const helloWorld = "Hello World !!!  ";
 
     const theExample = (
         <a href="https://www.example.com">
@@ -12,7 +12,6 @@ jQuery(function () {
     );
 
     ReactDOM.render(theExample, jQuery("#app")[0]);
-    console.log(jQuery("#app"));
 
     const selfClose = <input type="text" placeholder="slash in self close"/>
     ReactDOM.render(selfClose, jQuery("#test1")[0]);
@@ -24,8 +23,7 @@ jQuery(function () {
     ReactDOM.render(button1, jQuery(".test2")[0]);
 
     let message;
-
-    if (user.age >= drinkingAge) {
+    if (true) {
         message = (
             <h1>
                 Hey, check out this alcoholic beverage!
@@ -38,5 +36,35 @@ jQuery(function () {
             </h1>
         );
     }
+    ReactDOM.render(message, jQuery("#message")[0]);
+
+    
+
+    class MyComponentClass extends React.Component {
+        get name() {
+            return "Susan Sontag";
+        }
+
+        hoverBehavior(){
+            console.log("I am hovered");
+        }
+
+        render() {
+            return (
+                <blockquote onClick={this.hoverBehavior}>
+                    <p>
+                        What is important now is to recover our senses.
+                    </p>
+                    <cite>
+                        <a target="_blank" href="https://en.wikipedia.org/wiki/Susan_Sontag">
+                            {this.name}
+                        </a>
+                    </cite>
+                </blockquote>
+            );
+        }
+    };
+    ReactDOM.render(
+        <MyComponentClass/>, jQuery("#app1")[0]);
 
 });
